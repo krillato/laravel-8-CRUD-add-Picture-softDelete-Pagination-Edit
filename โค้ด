@@ -1,0 +1,14 @@
+แสดงข้อมูลหลังจาก login
+{{Auth::user()->name}}
+
+แสดงจำนวนวันที่ ที่สร้าง
+{{$row->created_at->diffForHumans()}}   ใช้ฟังก์ชั่น diffForHumans()
+
+เรียกใช้ https://laravel.com/docs/8.x/queries  สำหรับใช้ข้อมูลในDB
+use Illuminate\Support\Facades\DB;
+ถ้าไม่ได้เรียกใช้ผ่าน Model 
+-> {{Carbon\Carbon::parse($row->created_at)->diffForHumans()}} ต้องเรียกใช้ฟังก์ชั่นผ่าน Carbon
+
+เพิ่ม ฟีลในตารางข้อมูล แก้ในหน้า app/database/migaration
+$table->softDeletes();  เป็นตัวที่เอาไว้กู้คืนข้อมูลที่ถูกลบในตารางได้
+use SoftDeletes; เพิ่มใน model

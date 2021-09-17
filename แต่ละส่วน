@@ -1,0 +1,22 @@
+เปลี่ยน URL web => routes => web.php
+
+สร้าง controller  => php artisan make:controller ชื่อ  => ไฟล์ไปอยู่ที่ app => Http => controller
+
+สร้างส่วนแสดง Ui => resources  =>  views
+
+สร้างตารางข้อมูล  database => migaration
+❯  php artisan make:migration create_post_tbl --create=posts    
+(create_post_tbl =ชื่อไฟล์)(posts = ชื่อตาราง)
+
+อัพตารางลง xampp
+❯ php artisan migrate  
+
+สร้าง   model
+❯ php artisan make:model ชื่อโมเดล -m
+
+สร้าง  controller + model
+❯ php artisan make:controller PostController --resource --model=Post 
+
+สร้าง pageination เพิ่มโค้ดในหน้า  app => Providers => AppServiceProvider.php
+❯ Paginator::useBootstrap();
+❯ อาโค้ดมาจาก https://laravel.com/docs/8.x/pagination หัวข้อ Using Bootstrap
